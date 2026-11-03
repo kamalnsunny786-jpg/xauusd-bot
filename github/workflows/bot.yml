@@ -1,1 +1,43 @@
-name: gold-bot23on:4  schedule:5    - cron: "*/5 * * * *"6  workflow_dispatch:7    inputs:8      mode:9        description: "auto / test / weekly / signals / news"10        default: "auto"1112permissions:13  contents: write1415concurrency:16  group: gold-bot17  cancel-in-progress: false1819jobs:20  run:21    runs-on: ubuntu-latest22    timeout-minutes: 823    steps:24      - uses: actions/checkout@v42526      - uses: actions/setup-python@v527        with:28          python-version: "3.11"29          cache: pip3031      - name: Install32        run: pip install -r requirements.txt3334      - name: Run bot35        env:36          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN || secrets.BOT_TOKEN }}37          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID || secrets.CHAT_ID }}38          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}39          WEEKLY_HOUR_UTC: ${{ vars.WEEKLY_HOUR_UTC }}40          MIN_SCORE_ADJ: ${{ vars.MIN_SCORE_ADJ }}
+name: gold-bot
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "test / weekly / signals / news"
+        default: "auto"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gold-bot
+  cancel-in-progress: false
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run bot
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN || secrets.BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID || secrets.CHAT_ID }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          WEEKLY_HOUR_UTC: ${{ vars.WEEKLY_HOUR_UTC }}
+          MIN_SCORE_ADJ: ${{ vars.MIN_SCORE_ADJ }}
+        run: python main.py # Replace main.py with your script name if different
+
