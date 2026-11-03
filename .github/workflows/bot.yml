@@ -1,0 +1,56 @@
+name: gold-bot
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "auto / test / weekly / signals / news"
+        default: "auto"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gold-bot
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Run bot
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN || secrets.BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID || secrets.CHAT_ID }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          WEEKLY_HOUR_UTC: ${{ vars.WEEKLY_HOUR_UTC }}
+          MIN_SCORE_ADJ: ${{ vars.MIN_SCORE_ADJ }}
+          SEND_TFS: ${{ vars.SEND_TFS }}
+          MAX_HEADLINES_PER_DAY: ${{ vars.MAX_HEADLINES_PER_DAY }}
+          NOTIFY_HITS: ${{ vars.NOTIFY_HITS }}
+        run: python gold_bot.py ${{ github.event.inputs.mode || 'auto' }}
+
+      - name: Save state
+        run: |
+          git config user.name "gold-bot"
+          git config user.email "gold-bot@users.noreply.github.com"
+          git add bot_state.json 2>/dev/null || true
+          [ -f signals_log.json ] && git add signals_log.json || true
+          if ! git diff --cached --quiet; then
+            git commit -m "bot state"
+            git pull --rebase --autostash || true
+            git push || (git pull --rebase && git push)
+          fi
