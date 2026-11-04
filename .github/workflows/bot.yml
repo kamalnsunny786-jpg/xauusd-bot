@@ -41,6 +41,8 @@ jobs:
           SEND_TFS: ${{ vars.SEND_TFS }}
           MAX_HEADLINES_PER_DAY: ${{ vars.MAX_HEADLINES_PER_DAY }}
           NOTIFY_HITS: ${{ vars.NOTIFY_HITS }}
+          PRICE_OFFSET: ${{ vars.PRICE_OFFSET }}
+          GOLD_SYMBOL: ${{ vars.GOLD_SYMBOL }}
         run: python gold_bot.py ${{ github.event.inputs.mode || 'auto' }}
 
       - name: Save state
