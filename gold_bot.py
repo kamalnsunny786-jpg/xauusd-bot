@@ -1872,7 +1872,7 @@ def run_weekly(state, force=False):
     now = now_utc()
     wkid = now.strftime("%G-W%V")
     w = state.setdefault("weekly", {})
-    if not force and w.get("sent") == wkid:
+    if not force and w.get("sent_auto") == wkid:
         return
     monday = (now - timedelta(days=now.weekday())).replace(hour=0, minute=0, second=0, microsecond=0)
     h1 = gold("60m", "60d")
@@ -1956,7 +1956,8 @@ def run_weekly(state, force=False):
     if mid:
         pin(mid, w.get("pin_id"))
         w["pin_id"] = mid
-    w["sent"] = wkid
+    if not force:
+        w["sent_auto"] = wkid                # manual test se Friday ka auto report band nahi hoga
 
 
 # =================================================================== MAIN
@@ -1969,10 +1970,24 @@ def run_test():
                   "Apne Exness XAUUSD price se compare karo. Fark ho to PRICE_OFFSET variable me (data - Exness) daalo.")
     except Exception as e:
         send_text(f"Data fail: {esc(e)}")
+    # FRED key check
+    if not FRED_KEY:
+        send_text("FRED key nahi mili. GitHub secret ka naam FRED_API_KEY hona chahiye (Repository secrets me).")
+        return
+    u = fred_obs("UNRATE", 2)
+    c = fred_obs("CPIAUCSL", 14)
+    if not u or not c:
+        send_text("FRED key mili par data nahi aaya. Key galat ya adhoori copy hui ho sakti hai. Dobara copy karke secret badlo.")
+        return
+    mom = (c[0][1] / c[1][1] - 1) * 100
+    yoy = (c[0][1] / c[12][1] - 1) * 100 if len(c) > 12 else float("nan")
+    send_text(f"\u2705 FRED OK\nUnemployment rate: {u[0][1]:.1f}% ({u[0][0]})\n"
+              f"CPI: {mom:+.2f}% m/m, {yoy:.1f}% y/y ({c[0][0]})\n"
+              "Ab CPI/NFP jaisi news me asli Actual number aayega.")
 
 
 def main():
-    mode = sys.argv[1] if len(sys.argv) > 1 else "auto"
+    mode = (sys.argv[1] if len(sys.argv) > 1 else "auto").strip().lower() or "auto"
     print(f"CONFIG mode={mode} token_set={bool(TOKEN)} chat_id_set={bool(CHAT_ID)} fred_set={bool(FRED_KEY)} dry={DRY}")
     state = load_json(STATE_FILE, {})
     now = now_utc()
