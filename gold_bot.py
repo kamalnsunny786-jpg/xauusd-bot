@@ -149,9 +149,11 @@ def send_text(text):
                               "disable_web_page_preview": "true"})
 
 
-def send_photo(png, caption):
-    return tg("sendPhoto", {"chat_id": CHAT_ID, "caption": caption[:1020], "parse_mode": "HTML"},
-              files={"photo": ("chart.png", png)})
+def send_photo(png, caption, button_url=None, button_text="Read more"):
+    data = {"chat_id": CHAT_ID, "caption": caption[:1020], "parse_mode": "HTML"}
+    if button_url:
+        data["reply_markup"] = json.dumps({"inline_keyboard": [[{"text": button_text, "url": button_url}]]})
+    return tg("sendPhoto", data, files={"photo": ("chart.png", png)})
 
 
 def pin(message_id, old_id=None):
@@ -1772,6 +1774,10 @@ HEADS = [
 ]
 
 
+BLOCK = re.compile(r"film|movie|netflix|derby|oscar|emmy|box office|premiere|festival|actor|actress|trailer|series|"
+                   r"medal|olympic|gold coast|wedding|jewel|heist|robbery|stolen|game of|video game", re.I)
+
+
 def headline_scan(ns, now):
     today = now.strftime("%Y-%m-%d")
     cnt = ns["heads"].setdefault("count", {})
@@ -1803,7 +1809,12 @@ def headline_scan(ns, now):
             if (now - pub).total_seconds() > max_age_h * 3600:
                 continue
             tl = title.lower()
+            if BLOCK.search(title) or BLOCK.search(src):
+                continue
             if not re.search(rx, tl) or ("gold" not in tl and name.startswith(("Geo", "Central", "Gold"))):
+                continue
+            if name.startswith("Geo") and not re.search(
+                    r"price|rate|rally|jump|surge|slip|slide|fall|drop|rise|climb|gain|ounce|safe[- ]haven|demand|futures|bullion|xau", tl):
                 continue
             h = hashlib.md5(re.sub(r"\W+", "", tl)[:80].encode()).hexdigest()[:12]
             if h in ns["seen"]:
@@ -1818,7 +1829,8 @@ def headline_scan(ns, now):
                 pass
             png = news_card(name, TIER_COL[tier], title, [], None, seg, pub,
                             f"Source: {src}" if src else "", big_title=True)
-            send_photo(png, f"<b>{esc(name)}</b> [{tier}]\n{esc(title)}\n{esc(src)}\n{esc(link)}")
+            send_photo(png, f"<b>{esc(name)}</b> [{tier}]\n{esc(title)}\n{esc(src)}",
+                       button_url=link or None, button_text="Read more")
             ns["seen"].append(h)
             ns["heads"][name] = now.isoformat()
             cnt["n"] += 1
