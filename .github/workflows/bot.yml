@@ -47,10 +47,18 @@ jobs:
         run: |
           git config user.name "gold-bot"
           git config user.email "gold-bot@users.noreply.github.com"
-          git add bot_state.json 2>/dev/null || true
-          [ -f signals_log.json ] && git add signals_log.json || true
-          if ! git diff --cached --quiet; then
-            git commit -m "bot state"
-            git pull --rebase --autostash || true
-            git push || (git pull --rebase && git push)
-          fi
+          mkdir -p /tmp/st && rm -f /tmp/st/*.json
+          cp bot_state.json /tmp/st/ 2>/dev/null || true
+          cp signals_log.json /tmp/st/ 2>/dev/null || true
+          for i in 1 2 3 4; do
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            cp /tmp/st/*.json . 2>/dev/null || true
+            git add bot_state.json 2>/dev/null || true
+            [ -f signals_log.json ] && git add signals_log.json || true
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -qm "bot state"
+            if git push -q origin HEAD:main; then exit 0; fi
+            sleep 3
+          done
+          exit 0
