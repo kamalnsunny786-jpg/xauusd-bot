@@ -21,5 +21,29 @@
   "tp_hit": 0,
   "result": "loss",
   "r": -1.0
+ },
+ {
+  "id": "15m-1793893159",
+  "time": "2026-11-05T15:39:19.128381+00:00",
+  "tf": "15m",
+  "dir": -1,
+  "entry": 4111.7,
+  "sl": 4130.16,
+  "tp1": 4084.01,
+  "tp2": 4065.55,
+  "tp3": 4037.85,
+  "score": 8.7,
+  "grade": "B",
+  "names": [
+   "Triple Top",
+   "Evening Star",
+   "Support and Resistance Flip",
+   "False Breakout",
+   "Break of Structure (BOS)"
+  ],
+  "status": "open",
+  "tp_hit": 0,
+  "result": "open",
+  "r": 0.0
  }
 ]
