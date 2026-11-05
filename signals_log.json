@@ -45,5 +45,29 @@
   "tp_hit": 0,
   "result": "loss",
   "r": -1.0
+ },
+ {
+  "id": "15m-1793922793",
+  "time": "2026-11-05T23:53:13.718120+00:00",
+  "tf": "15m",
+  "dir": 1,
+  "entry": 4106.5,
+  "sl": 4095.78,
+  "tp1": 4122.58,
+  "tp2": 4133.3,
+  "tp3": 4139.73,
+  "score": 8.9,
+  "grade": "B",
+  "names": [
+   "Liquidity Grab",
+   "False Breakout",
+   "Inverse Fair Value Gap (IFVG)",
+   "Dragonfly Doji",
+   "Discount Zone"
+  ],
+  "status": "open",
+  "tp_hit": 0,
+  "result": "open",
+  "r": 0.0
  }
 ]
