@@ -1,1 +1,25 @@
-[]
+[
+ {
+  "id": "1h-1793838690",
+  "time": "2026-11-05T00:31:30.933856+00:00",
+  "tf": "1h",
+  "dir": -1,
+  "entry": 4075.1,
+  "sl": 4091.72,
+  "tp1": 4050.18,
+  "tp2": 4033.56,
+  "tp3": 3981.25,
+  "score": 7.0,
+  "grade": "B",
+  "names": [
+   "Liquidity Sweep",
+   "False Breakout",
+   "Tweezer Top",
+   "Premium Zone"
+  ],
+  "status": "open",
+  "tp_hit": 0,
+  "result": "open",
+  "r": 0.0
+ }
+]
