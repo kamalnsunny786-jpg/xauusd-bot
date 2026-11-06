@@ -69,5 +69,30 @@
   "tp_hit": 0,
   "result": "loss",
   "r": -1.0
+ },
+ {
+  "id": "1h-1793935784",
+  "time": "2026-11-06T03:29:44.569664+00:00",
+  "tf": "1h",
+  "dir": -1,
+  "entry": 4071.2,
+  "sl": 4090.09,
+  "tp1": 4042.87,
+  "tp2": 4023.98,
+  "tp3": 3981.25,
+  "score": 7.8,
+  "grade": "B",
+  "names": [
+   "Breaker Block",
+   "False Breakout",
+   "Bearish Engulfing",
+   "Break of Structure (BOS)",
+   "Inverse Fair Value Gap (IFVG)",
+   "Premium Zone"
+  ],
+  "status": "open",
+  "tp_hit": 0,
+  "result": "open",
+  "r": 0.0
  }
 ]
