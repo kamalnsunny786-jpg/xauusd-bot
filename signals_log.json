@@ -94,5 +94,28 @@
   "tp_hit": 0,
   "result": "loss",
   "r": -1.0
+ },
+ {
+  "id": "1h-1794264305",
+  "time": "2026-11-09T22:45:05.867560+00:00",
+  "tf": "1h",
+  "dir": 1,
+  "entry": 4149.6,
+  "sl": 4106.84,
+  "tp1": 4213.75,
+  "tp2": 4256.51,
+  "tp3": 4320.66,
+  "score": 7.3,
+  "grade": "B",
+  "names": [
+   "False Breakout",
+   "Inside Bar",
+   "Break of Structure (BOS)",
+   "Displacement"
+  ],
+  "status": "open",
+  "tp_hit": 0,
+  "result": "open",
+  "r": 0.0
  }
 ]
