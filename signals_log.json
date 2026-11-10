@@ -113,9 +113,9 @@
    "Break of Structure (BOS)",
    "Displacement"
   ],
-  "status": "open",
+  "status": "closed",
   "tp_hit": 0,
-  "result": "open",
-  "r": 0.0
+  "result": "loss",
+  "r": -1.0
  }
 ]
