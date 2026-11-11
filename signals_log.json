@@ -117,5 +117,28 @@
   "tp_hit": 0,
   "result": "loss",
   "r": -1.0
+ },
+ {
+  "id": "15m-1794357361",
+  "time": "2026-11-11T00:36:01.351338+00:00",
+  "tf": "15m",
+  "dir": 1,
+  "entry": 4047.0,
+  "sl": 4041.01,
+  "tp1": 4055.99,
+  "tp2": 4061.98,
+  "tp3": 4070.97,
+  "score": 7.8,
+  "grade": "B",
+  "names": [
+   "Double Bottom",
+   "Inside Bar",
+   "Break of Structure (BOS)",
+   "Discount Zone"
+  ],
+  "status": "open",
+  "tp_hit": 0,
+  "result": "open",
+  "r": 0.0
  }
 ]
