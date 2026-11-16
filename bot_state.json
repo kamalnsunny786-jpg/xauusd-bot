@@ -1,10 +1,10 @@
 {
  "sig": {
   "last_bar": {
-   "5m": "2026-11-13 18:32:14+00:00",
-   "15m": "2026-11-13 18:15:00+00:00",
-   "1h": "2026-11-13 17:00:00+00:00",
-   "4h": "2026-11-13 12:00:00+00:00"
+   "5m": "2026-11-15 23:56:06+00:00",
+   "15m": "2026-11-15 23:45:00+00:00",
+   "1h": "2026-11-15 23:00:00+00:00",
+   "4h": "2026-11-15 20:00:00+00:00"
   },
   "last_sent": {
    "1h": {
@@ -64,7 +64,10 @@
    "74d12e0c6bba",
    "241c399049a3",
    "0584616a4dd8",
-   "463c6841b004"
+   "463c6841b004",
+   "3afd451e98f1",
+   "0df9f254ccf9",
+   "7d893f6d825b"
   ],
   "base": {
    "2026-11-05T13:30:00+00:00|claims": {
@@ -86,13 +89,13 @@
   "mkt": {},
   "heads": {
    "count": {
-    "day": "2026-11-13",
-    "n": 5
+    "day": "2026-11-16",
+    "n": 3
    },
-   "Central Bank Gold Purchases": "2026-11-13T11:30:59.385052+00:00",
+   "Central Bank Gold Purchases": "2026-11-16T00:06:16.031454+00:00",
    "Gold ETF Inflows / Outflows": "2026-11-13T11:30:59.385052+00:00",
-   "China Economic News": "2026-11-13T18:42:20.430733+00:00",
-   "Geopolitical / War": "2026-11-13T03:37:16.640000+00:00"
+   "China Economic News": "2026-11-16T00:06:16.031454+00:00",
+   "Geopolitical / War": "2026-11-16T00:06:16.031454+00:00"
   },
   "log": [
    {
@@ -172,76 +175,48 @@
   ]
  },
  "cal": {
-  "fetched": "2026-11-13T18:42:20.534255+00:00",
+  "fetched": "2026-11-16T00:06:16.156320+00:00",
   "events": [
    {
-    "id": "Core CPI m/m|2026-11-10T13:30:00+00:00",
-    "time": "2026-11-10T13:30:00+00:00",
-    "title": "Core CPI m/m",
+    "id": "Fed Chairman Warsh Speaks|2026-11-16T17:00:00+00:00",
+    "time": "2026-11-16T17:00:00+00:00",
+    "title": "Fed Chairman Warsh Speaks",
     "country": "USD",
     "impact": "High",
-    "forecast": "0.2%",
-    "previous": "0.3%",
+    "forecast": "",
+    "previous": "",
     "actual": "",
-    "label": "US CPI / Core CPI",
+    "label": "Fed Chair Speech",
     "tier": "Very High",
-    "kind": "cpi",
+    "kind": "powell",
     "vh": true
    },
    {
-    "id": "CPI m/m|2026-11-10T13:30:00+00:00",
-    "time": "2026-11-10T13:30:00+00:00",
-    "title": "CPI m/m",
+    "id": "FOMC Meeting Minutes|2026-11-18T19:00:00+00:00",
+    "time": "2026-11-18T19:00:00+00:00",
+    "title": "FOMC Meeting Minutes",
     "country": "USD",
     "impact": "High",
-    "forecast": "0.3%",
-    "previous": "0.6%",
+    "forecast": "",
+    "previous": "",
     "actual": "",
-    "label": "US CPI / Core CPI",
+    "label": "FOMC",
     "tier": "Very High",
-    "kind": "cpi",
+    "kind": "fomc",
     "vh": true
    },
    {
-    "id": "Unemployment Claims|2026-11-12T13:30:00+00:00",
-    "time": "2026-11-12T13:30:00+00:00",
+    "id": "Unemployment Claims|2026-11-19T13:30:00+00:00",
+    "time": "2026-11-19T13:30:00+00:00",
     "title": "Unemployment Claims",
     "country": "USD",
     "impact": "Medium",
-    "forecast": "194K",
-    "previous": "189K",
+    "forecast": "199K",
+    "previous": "200K",
     "actual": "",
     "label": "Initial Jobless Claims",
     "tier": "Medium-High",
     "kind": "claims",
-    "vh": false
-   },
-   {
-    "id": "Core PPI m/m|2026-11-13T13:30:00+00:00",
-    "time": "2026-11-13T13:30:00+00:00",
-    "title": "Core PPI m/m",
-    "country": "USD",
-    "impact": "High",
-    "forecast": "0.3%",
-    "previous": "0.7%",
-    "actual": "",
-    "label": "US PPI",
-    "tier": "High",
-    "kind": "ppi",
-    "vh": false
-   },
-   {
-    "id": "PPI m/m|2026-11-13T13:30:00+00:00",
-    "time": "2026-11-13T13:30:00+00:00",
-    "title": "PPI m/m",
-    "country": "USD",
-    "impact": "High",
-    "forecast": "0.4%",
-    "previous": "1.3%",
-    "actual": "",
-    "label": "US PPI",
-    "tier": "High",
-    "kind": "ppi",
     "vh": false
    }
   ]
