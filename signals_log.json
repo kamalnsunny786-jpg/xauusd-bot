@@ -140,5 +140,28 @@
   "tp_hit": 0,
   "result": "loss",
   "r": -1.0
+ },
+ {
+  "id": "1h-1795008593",
+  "time": "2026-11-18T13:29:53.854245+00:00",
+  "tf": "1h",
+  "dir": -1,
+  "entry": 3745.3,
+  "sl": 3778.43,
+  "tp1": 3695.6,
+  "tp2": 3662.46,
+  "tp3": 3612.76,
+  "score": 6.7,
+  "grade": "B",
+  "names": [
+   "Bear Flag",
+   "Break of Structure (BOS)",
+   "Inside Bar",
+   "Outside Bar"
+  ],
+  "status": "open",
+  "tp_hit": 0,
+  "result": "open",
+  "r": 0.0
  }
 ]
