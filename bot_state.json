@@ -1,10 +1,10 @@
 {
  "sig": {
   "last_bar": {
-   "5m": "2026-11-20 17:06:51+00:00",
-   "15m": "2026-11-20 17:00:00+00:00",
-   "1h": "2026-11-20 16:00:00+00:00",
-   "4h": "2026-11-20 12:00:00+00:00"
+   "5m": "2026-11-22 23:57:07+00:00",
+   "15m": "2026-11-22 23:45:00+00:00",
+   "1h": "2026-11-22 23:00:00+00:00",
+   "4h": "2026-11-22 20:00:00+00:00"
   },
   "last_sent": {
    "1h": {
@@ -88,7 +88,8 @@
    "1d8c9af6429e",
    "3bebd8032e4d",
    "2d3dae259845",
-   "42109ec27758"
+   "42109ec27758",
+   "9f4a1feb73da"
   ],
   "base": {
    "2026-11-05T13:30:00+00:00|claims": {
@@ -111,10 +112,10 @@
   "mkt": {},
   "heads": {
    "count": {
-    "day": "2026-11-20",
-    "n": 4
+    "day": "2026-11-23",
+    "n": 1
    },
-   "Central Bank Gold Purchases": "2026-11-20T17:16:54.718568+00:00",
+   "Central Bank Gold Purchases": "2026-11-23T00:07:15.627964+00:00",
    "Gold ETF Inflows / Outflows": "2026-11-19T19:12:21.718637+00:00",
    "China Economic News": "2026-11-20T17:16:54.718568+00:00",
    "Geopolitical / War": "2026-11-20T17:16:54.718568+00:00"
@@ -227,44 +228,58 @@
   ]
  },
  "cal": {
-  "fetched": "2026-11-20T17:16:54.772311+00:00",
+  "fetched": "2026-11-23T00:07:15.781861+00:00",
   "events": [
    {
-    "id": "Fed Chairman Warsh Speaks|2026-11-16T17:00:00+00:00",
-    "time": "2026-11-16T17:00:00+00:00",
-    "title": "Fed Chairman Warsh Speaks",
+    "id": "Core PCE Price Index m/m|2026-11-25T13:30:00+00:00",
+    "time": "2026-11-25T13:30:00+00:00",
+    "title": "Core PCE Price Index m/m",
     "country": "USD",
     "impact": "High",
-    "forecast": "",
-    "previous": "",
+    "forecast": "0.3%",
+    "previous": "0.3%",
     "actual": "",
-    "label": "Fed Chair Speech",
+    "label": "US PCE Inflation",
     "tier": "Very High",
-    "kind": "powell",
+    "kind": "pce",
     "vh": true
    },
    {
-    "id": "FOMC Meeting Minutes|2026-11-18T19:00:00+00:00",
-    "time": "2026-11-18T19:00:00+00:00",
-    "title": "FOMC Meeting Minutes",
+    "id": "Prelim GDP q/q|2026-11-25T13:30:00+00:00",
+    "time": "2026-11-25T13:30:00+00:00",
+    "title": "Prelim GDP q/q",
     "country": "USD",
     "impact": "High",
-    "forecast": "",
-    "previous": "",
+    "forecast": "3.5%",
+    "previous": "3.4%",
     "actual": "",
-    "label": "FOMC",
-    "tier": "Very High",
-    "kind": "fomc",
-    "vh": true
+    "label": "US GDP",
+    "tier": "High",
+    "kind": "gdp",
+    "vh": false
    },
    {
-    "id": "Unemployment Claims|2026-11-19T13:30:00+00:00",
-    "time": "2026-11-19T13:30:00+00:00",
+    "id": "Prelim GDP Price Index q/q|2026-11-25T13:30:00+00:00",
+    "time": "2026-11-25T13:30:00+00:00",
+    "title": "Prelim GDP Price Index q/q",
+    "country": "USD",
+    "impact": "Medium",
+    "forecast": "2.3%",
+    "previous": "2.3%",
+    "actual": "",
+    "label": "US GDP",
+    "tier": "High",
+    "kind": "gdp",
+    "vh": false
+   },
+   {
+    "id": "Unemployment Claims|2026-11-25T13:30:00+00:00",
+    "time": "2026-11-25T13:30:00+00:00",
     "title": "Unemployment Claims",
     "country": "USD",
     "impact": "Medium",
-    "forecast": "198K",
-    "previous": "200K",
+    "forecast": "201K",
+    "previous": "203K",
     "actual": "",
     "label": "Initial Jobless Claims",
     "tier": "Medium-High",
