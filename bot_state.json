@@ -1,16 +1,16 @@
 {
  "sig": {
   "last_bar": {
-   "5m": "2026-11-25 05:32:43+00:00",
-   "15m": "2026-11-25 05:15:00+00:00",
-   "1h": "2026-11-24 21:00:00+00:00",
-   "4h": "2026-11-25 00:00:00+00:00"
+   "5m": "2026-11-25 15:57:46+00:00",
+   "15m": "2026-11-25 15:45:00+00:00",
+   "1h": "2026-11-25 15:00:00+00:00",
+   "4h": "2026-11-25 12:00:00+00:00"
   },
   "last_sent": {
    "1h": {
-    "time": "2026-11-18T13:29:53.854245+00:00",
+    "time": "2026-11-25T16:07:47.593860+00:00",
     "dir": -1,
-    "entry": 3745.3
+    "entry": 3477.4
    },
    "15m": {
     "time": "2026-11-11T00:36:01.351338+00:00",
@@ -27,7 +27,10 @@
    "2026-11-12T13:30:00+00:00|claims",
    "2026-11-13T13:30:00+00:00|ppi",
    "2026-11-18T19:00:00+00:00|fomc",
-   "2026-11-19T13:30:00+00:00|claims"
+   "2026-11-19T13:30:00+00:00|claims",
+   "2026-11-25T13:30:00+00:00|claims",
+   "2026-11-25T13:30:00+00:00|gdp",
+   "2026-11-25T13:30:00+00:00|pce"
   ],
   "seen": [
    "1e1b65df7be8",
@@ -98,7 +101,9 @@
    "c17dcf183824",
    "5512b16b91a3",
    "6a749ef90c9c",
-   "a3c329a2197b"
+   "a3c329a2197b",
+   "cd5dfde8f636",
+   "ca6470bd3580"
   ],
   "base": {
    "2026-11-05T13:30:00+00:00|claims": {
@@ -122,12 +127,12 @@
   "heads": {
    "count": {
     "day": "2026-11-25",
-    "n": 1
+    "n": 3
    },
    "Central Bank Gold Purchases": "2026-11-25T05:42:49.067316+00:00",
    "Gold ETF Inflows / Outflows": "2026-11-24T23:50:33.940380+00:00",
-   "China Economic News": "2026-11-24T23:50:33.940380+00:00",
-   "Geopolitical / War": "2026-11-20T17:16:54.718568+00:00"
+   "China Economic News": "2026-11-25T16:07:49.913672+00:00",
+   "Geopolitical / War": "2026-11-25T16:07:49.913672+00:00"
   },
   "log": [
    {
@@ -233,11 +238,63 @@
      }
     ],
     "react": "Gold reaction: -41.20$ (-1.11%)  |  range 3668-3722"
+   },
+   {
+    "time": "2026-11-25T13:30:00+00:00",
+    "label": "Initial Jobless Claims",
+    "tier": "Medium-High",
+    "rows": [
+     {
+      "title": "Unemployment Claims",
+      "actual": "",
+      "forecast": "201K",
+      "previous": "203K",
+      "kind": "claims"
+     }
+    ],
+    "react": "Gold reaction: -44.10$ (-1.25%)  |  range 3454-3522"
+   },
+   {
+    "time": "2026-11-25T13:30:00+00:00",
+    "label": "US GDP",
+    "tier": "High",
+    "rows": [
+     {
+      "title": "Prelim GDP q/q",
+      "actual": "",
+      "forecast": "3.5%",
+      "previous": "3.4%",
+      "kind": "gdp"
+     },
+     {
+      "title": "Prelim GDP Price Index q/q",
+      "actual": "",
+      "forecast": "2.3%",
+      "previous": "2.3%",
+      "kind": "gdp"
+     }
+    ],
+    "react": "Gold reaction: -44.10$ (-1.25%)  |  range 3454-3522"
+   },
+   {
+    "time": "2026-11-25T13:30:00+00:00",
+    "label": "US PCE Inflation",
+    "tier": "Very High",
+    "rows": [
+     {
+      "title": "Core PCE Price Index m/m",
+      "actual": "",
+      "forecast": "0.3%",
+      "previous": "0.3%",
+      "kind": "pce"
+     }
+    ],
+    "react": "Gold reaction: -44.10$ (-1.25%)  |  range 3454-3522"
    }
   ]
  },
  "cal": {
-  "fetched": "2026-11-25T05:42:49.224373+00:00",
+  "fetched": "2026-11-25T16:07:49.948990+00:00",
   "events": [
    {
     "id": "Core PCE Price Index m/m|2026-11-25T13:30:00+00:00",
